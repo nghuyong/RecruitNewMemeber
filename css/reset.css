@@ -1,0 +1,40 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,hr,input,form,table,td,a,p,textarea,img,span,section {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+}
+
+ol,ul,li {
+  list-style: none;
+}
+
+/*去除下划线*/
+a {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+input,select,textarea {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/*清除浮动*/
+.clearfloat {
+  zoom: 1;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}

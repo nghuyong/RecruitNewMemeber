@@ -1,0 +1,153 @@
+/* 设置每一页的背景颜色 */
+/*.s1 {
+  background-color: #79def7;
+}
+
+.s2 {
+  background-color: #fc5f53;
+}
+
+.s3 {
+  background-color: #ffff00;
+}
+
+.s4 {
+  background-color: #ffffcc;
+}
+
+.s5 {
+  background-color: #fdf6e3;
+}
+
+.s6 {
+  background-color: #efefef;
+}*/
+
+/* 第一页 */
+.col-md-4 {
+  text-align: center;
+}
+#s1_app {
+  position: relative;
+  float: left;
+  width: 45%;
+  left: 2%;
+  top: 40px;
+  z-index: 1;
+}
+
+#s1_iot {
+  position: relative;
+  float:right;
+  width: 45%;
+  right: 4%;
+  top: 40px;
+  z-index: 2;
+}
+
+#s1_coder {
+  position: relative;
+  width: 80%;
+  top: -10px;
+  z-index: 3;
+}
+
+#s1_recruit {
+  position: relative;
+  width: 90%;
+}
+
+#s1_girl {
+  position: fixed;
+  width: 150px;
+  bottom: 0;
+}
+
+/* 第二页 */
+
+#s2-logo {
+  position: relative;
+  margin-top: 85px;
+}
+.circle {
+  width: 220px;
+  height: 220px;
+  background-color: #fff;
+  -moz-border-radius: 110px;
+  -webkit-border-radius: 110px;
+  border-radius: 110px;
+  margin: 0 auto;
+}
+
+.text-center {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#s2_textUp {
+  position: relative;
+  margin-bottom: 10%;
+}
+
+#s2_textDown {
+  position: relative;
+  margin-top: 10%;
+}
+
+.s2 span {
+  color: #63f4f9;
+}
+
+/* 第三页 */
+.s3 {
+  background: url("../image/s3_border.png") no-repeat center;
+  background-size: cover;
+}
+
+.s3 p {
+  float: left;
+  width: 80%;
+  margin-left: 11%;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.s3 img {
+  position: relative;
+  margin-top: 5%;
+}
+
+/*第四页 */
+.s4 h2{
+  font-size: 25px;
+  color: #222222;
+  font-weight: 900;
+}
+.img {
+  width: 95%;
+  margin-top: 5%;
+}
+
+.like {
+  float: right;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+/* 第五页 */
+.s5 img {
+  width: 100%;
+}
+
+/* 第六页 */
+.s6 span {
+  display: block;
+  color: #222222;
+}
+
+#bt {
+  margin-left: 34%;
+  display: block;
+  width: 30%;
+}
