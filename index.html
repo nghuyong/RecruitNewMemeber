@@ -28,8 +28,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <img id="s1_app" src="image/s1_a.png" alt="移动应用开发创新">
-          <img id="s1_iot" src="image/s1_iot.png" alt="物联网设计">
+          <div class="name">
+            <img id="s1_app" src="image/s1_a.png" alt="移动应用开发创新">
+            <img id="s1_iot" src="image/s1_iot.png" alt="物联网设计">
+          </div>
+
         </div>
       </div>
       <div class="row">
@@ -53,19 +56,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <p id="s2_textUp" class="text-center">
+          <p id="s2_textUp" class="text-left center">
             迎合移动互联网发展潮流
-            <br>
             <br>
             安卓、IOS、HTML5 APP开发
           </p>
-          <br>
-          <div class="circle">
+          <div id="circle" class="circle">
             <img id="s2-logo" src="image/s2_logo.png" alt="MADI">
           </div>
-          <p id="s2_textDown" class="text-center">
+          <p id="s2_textDown" class="text-right center">
             只要<span>感兴趣、肯坚持、真心学习</span>
-            <br>
             <br>
             欢迎加入我们！
           </p>
@@ -101,11 +101,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <h2 class="text-center">你感兴趣的方向</h2>
+          <img class="like" src="image/s4_likeit.png">
           <img id="s4_img1" class="img" src="image/s4_app.png">
           <img id="s4_img2" class="img" src="image/s4_front.png">
           <img id="s4_img3" class="img" src="image/s4_back.png">
-          <img class="like" src="image/s4_likeit.png">
         </div>
       </div>
     </div>
@@ -123,8 +122,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <img src="image/s6_qrcode.jpg">
-          <a href="#" ><img id="bt" src="image/s6_button.png"></a>
+          <img id="QR_code" src="image/s6_qrcode.jpg">
+          <a href="http://form.mikecrm.com/lsrXpj" ><img id="bt" src="image/s6_button.png"></a>
           <span>点击进入报名页面</span>
         </div>
       </div>
@@ -151,79 +150,84 @@
       scrollOverflow:true,
       anchors:['page1','page2','page3','page4','page5','page6'],
 
+
       afterLoad: function (anchorLink, index) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $('#s1_app').hide();
+        $('#s1_girl ').hide();
+        $('#s1_iot ').hide();
+        $('#s1_coder ').hide();
+        $('#s1_recruit').hide();
+
+        $('.circle').hide();
+        $('#s2_textUp').hide();
+        $('#s2-logo').hide();
+        $('#s2_textDown').hide();
+
+        $('.s3 h2').hide();
+        $('.s3 p').hide();
+        $('.s3 img').hide();
+
+        $('.like').hide();
+        $('#s4_img1').hide();
+        $('#s4_img2').hide();
+        $('#s4_img3').hide();
+
         switch (index) {
           case 1:
-            $('#s1_app').addClass('animated rubberBand');
-            setTimeout(function(){
-              $('#s1_app').removeClass('animated rubberBand');
-            }, 1000);
-            $('#s1_iot').addClass('animated rubberBand');
-            setTimeout(function(){
-              $('#s1_iot').removeClass('animated rubberBand');
-            }, 1000);
-            $('#s1_coder').addClass('animated zoomInUp');
-            setTimeout(function(){
+
+            $('#s1_coder').show().addClass('animated zoomInUp').one(animationEnd, function() {
               $('#s1_coder').removeClass('animated zoomInUp');
-            }, 1000);
-            $('#s1_recruit').addClass('animated bounceInDown');
-            setTimeout(function(){
-              $('#s1_recruit').removeClass('animated bounceInDown');
-            }, 1000);
-            $('#s1_girl').addClass('animated rollIn');
-            setTimeout(function(){
-              $('#s1_girl').removeClass('animated rollIn');
-            }, 1000);
+
+              $('#s1_recruit').show().addClass('animated bounceInDown');
+              $('#s1_app').show().addClass('animated rubberBand');
+              $('#s1_iot').show().addClass('animated rubberBand').one(animationEnd,function () {
+                $('#s1_app').removeClass('animated rubberBand');
+                $('#s1_iot').removeClass('animated rubberBand');
+                $('#s1_recruit').removeClass('animated bounceInDown');
+
+                $('#s1_girl').show().addClass('animated rollIn').one(animationEnd,function () {
+                  $('#s1_girl').removeClass('animated rollIn');
+                });
+
+              });
+
+            });
             break;
           case 2:
-            $('#s2_textUp').addClass('animated slideInRight');
-            setTimeout(function(){
-              $('#s2_textUp').removeClass('animated slideInRight');
-            }, 1000);
-            $('#s2-logo').addClass('animated bounce');
-            setTimeout(function(){
-              $('#s2-logo').removeClass('animated bounce');
-            }, 1000);
-            $('#s2_textDown').addClass('animated slideInLeft');
-            setTimeout(function(){
-              $('#s2_textDown').removeClass('animated slideInLeft');
-            }, 1000);
+
+            $('#circle').show().addClass('animated rubberBand').one(animationEnd,function () {
+              $('#circle').removeClass('animated rubberBand');
+              $('#s2-logo').show().addClass('animated swing');
+              $('#s2_textUp').show().addClass('animated slideInRight');
+              $('#s2_textDown').show().addClass('animated slideInLeft').one(animationEnd,function () {
+                $('#s2-logo').removeClass('animated swing');
+                $('#s2_textUp').removeClass('animated slideInRight');
+                $('#s2_textDown').removeClass('animated slideInLeft');
+              });
+            });
             break;
           case 3:
-            $('.s3 h2').addClass('animated bounceIn');
-            setTimeout(function(){
+
+
+            $('.s3 h2').show().addClass('animated bounceIn').one(animationEnd,function () {
               $('.s3 h2').removeClass('animated bounceIn');
-            }, 1000);
-            $('.s3 p').addClass('animated slideInLeft');
-            setTimeout(function(){
-              $('.s3 p').removeClass('animated slideInLeft');
-            }, 1000);
-            $('.s3 img').addClass('animated flipInY');
-            setTimeout(function(){
-              $('.s3 img').removeClass('animated flipInY');
-            }, 1000);
+
+              $('.s3 p').show().addClass('animated slideInLeft');
+              $('.s3 img').show().addClass('animated flipInY').one(animationEnd,function () {
+                $('.s3 p').removeClass('animated slideInLeft');
+                $('.s3 img').removeClass('animated flipInY');
+              });
+
+            });
             break;
           case 4:
-            $('.s4 h2').addClass('animated tada');
-            setTimeout(function(){
-              $('.s4 h2').removeClass('animated tada');
-            }, 1000);
-            $('#s4_img1').addClass('animated fadeInLeft');
-            setTimeout(function(){
-              $('#s4_img1').removeClass('animated fadeInLeft');
-            }, 1000);
-            $('#s4_img2').addClass('animated fadeInRight');
-            setTimeout(function(){
-              $('#s4_img2').removeClass('animated fadeInRight');
-            }, 1000);
-            $('#s4_img3').addClass('animated fadeInLeft');
-            setTimeout(function(){
-              $('#s4_img3').removeClass('animated fadeInLeft');
-            }, 1000);
-            $('.like').addClass('animated flash');
-            setTimeout(function(){
-              $('.like').removeClass('animated flash');
-            }, 1000);
+
+            $('.like').show().addClass('animated flash').one(animationEnd,function () {
+              $('#s4_img1').show().addClass('animated fadeInLeft');
+              $('#s4_img2').show().addClass('animated fadeInRight');
+              $('#s4_img3').show().addClass('animated fadeInLeft');
+            });
             break;
           case 5:
             $('.s5 img').addClass('animated swing');
@@ -244,12 +248,28 @@
       onLeave:function (index,direction) {
         switch (index) {
           case 1:
+            $('#s1_app').hide();
+            $('#s1_girl ').hide();
+            $('#s1_iot ').hide();
+            $('#s1_coder ').hide();
+            $('#s1_recruit').hide();
             break;
           case 2:
+            $('.circle').hide();
+            $('#s2_textUp').hide();
+            $('#s2-logo').hide();
+            $('#s2_textDown').hide();
             break;
           case 3:
+            $('.s3 h2').hide();
+            $('.s3 p').hide();
+            $('.s3 img').hide();
             break;
           case 4:
+            $('.like').hide();
+            $('#s4_img1').hide();
+            $('#s4_img2').hide();
+            $('#s4_img3').hide();
             break;
           case 5:
             break;

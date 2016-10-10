@@ -23,6 +23,7 @@
   background-color: #efefef;
 }*/
 
+
 /* 第一页 */
 .col-md-4 {
   text-align: center;
@@ -30,56 +31,65 @@
 #s1_app {
   position: relative;
   float: left;
-  width: 45%;
-  left: 2%;
-  top: 40px;
+  width: 120px;
+  left: 10px;
   z-index: 1;
+
+  animate-duration: 3s;    //动画持续时间
+  animate-delay: 5s;    //动画延迟时间
+  animate-iteration-count: 2;    //动画执行次数
+
+}
+
+.name {
+  width: 280px;
+  margin: 0 auto;
 }
 
 #s1_iot {
   position: relative;
   float:right;
-  width: 45%;
-  right: 4%;
-  top: 40px;
+  width: 120px;
+  right: 10px;
   z-index: 2;
 }
 
 #s1_coder {
   position: relative;
-  width: 80%;
-  top: -10px;
+  width: 200px;
+  top: -35px;
   z-index: 3;
 }
 
 #s1_recruit {
   position: relative;
-  width: 90%;
+  width: 240px;
+  margin-top: -30px;
 }
 
 #s1_girl {
-  position: fixed;
-  width: 150px;
-  bottom: 0;
+  position: relative;
+  width: 100px;
+  left: 20px;
 }
 
 /* 第二页 */
 
 #s2-logo {
   position: relative;
-  margin-top: 85px;
+  margin-top: 75px;
 }
 .circle {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   background-color: #fff;
-  -moz-border-radius: 110px;
-  -webkit-border-radius: 110px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
   border-radius: 110px;
   margin: 0 auto;
 }
 
-.text-center {
+.center {
   color: #fff;
   font-size: 20px;
   font-weight: 800;
@@ -87,23 +97,21 @@
 
 #s2_textUp {
   position: relative;
-  margin-bottom: 10%;
+  margin-bottom: 10px;
 }
 
 #s2_textDown {
   position: relative;
-  margin-top: 10%;
+  margin-top: 10px;
 }
 
 .s2 span {
-  color: #63f4f9;
+  color: #38eece;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* 第三页 */
-.s3 {
-  background: url("../image/s3_border.png") no-repeat center;
-  background-size: cover;
-}
 
 .s3 p {
   float: left;
@@ -119,25 +127,20 @@
 }
 
 /*第四页 */
-.s4 h2{
-  font-size: 25px;
-  color: #222222;
-  font-weight: 900;
-}
 .img {
-  width: 95%;
-  margin-top: 5%;
+  width: 92%;
+  margin-top: 10px;
 }
 
 .like {
-  float: right;
-  margin-top: 3%;
-  margin-right: 5%;
+  position: relative;
+  margin-bottom: 10px;
+  width: 120px;
 }
 
 /* 第五页 */
 .s5 img {
-  width: 100%;
+  width: 300px;
 }
 
 /* 第六页 */
@@ -146,8 +149,14 @@
   color: #222222;
 }
 
+#QR_code {
+  width: 200px;
+  margin-top: -20px;
+}
+
 #bt {
-  margin-left: 34%;
   display: block;
-  width: 30%;
+  text-align: center;
+  width: 80px;
+  margin: 0 auto;
 }
